@@ -1,0 +1,12 @@
+java.lang.Exception: Uninitialized TermDisplay
+  coursier.cache.loggers.RefreshLogger.$anonfun$updateRunnable$1(RefreshLogger.scala:236)
+  scala.Option.getOrElse(Option.scala:201)
+  coursier.cache.loggers.RefreshLogger.updateRunnable(RefreshLogger.scala:236)
+  coursier.cache.loggers.RefreshLogger.downloadedArtifact(RefreshLogger.scala:350)
+  coursier.cache.internal.Downloader$Blocking$.remote(Downloader.scala:433)
+  coursier.cache.internal.Downloader.$anonfun$remote$6(Downloader.scala:546)
+  scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+  scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base/java.lang.Thread.run(Thread.java:840)

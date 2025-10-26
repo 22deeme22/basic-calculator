@@ -1,0 +1,5 @@
+# Ignore tous les dossiers de build
+target/
+egui_calculator/target/
+egui_calculator/frontend/target/
+egui_calculator/backend/lab_3/target/
