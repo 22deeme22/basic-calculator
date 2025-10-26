@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="src/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="src/calculator.css">
+        <script type="text/javascript" src="src/viz-standalone.js"></script>
+    </head>
+    <body>
+        <div class="container" id="app">
+            <div class="row center">
+                <div class="calc-title">calculator</div>
+            </div>
+            <div class="row">
+            <div class="col s12">
+                <div class="card-panel">
+                    <span style="font-weight: 800; margin-right: 1em;">Expression Type:</span>
+                    <label class="expr-type-box">
+                        <input name="exprtype" type="radio" value="tiny" checked />
+                        <span>Tiny</span>
+                    </label>
+                    <label class="expr-type-box">
+                        <input name="exprtype" type="radio" value="basic" />
+                        <span>Basic</span>
+                    </label>
+                    <label class="expr-type-box">
+                        <input name="exprtype" type="radio" value="full" />
+                        <span>Full</span>
+                    </label>
+                    <div class="input-field expr-input-box">
+                        <textarea id="expr" type="text" class="materialize-textarea"></textarea>
+                        <label for="expr">Expression</label>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row center">
+                <button class="btn waves-effect waves-light blue lighten-1" 
+                    type="submit" name="action" id="btnShow"
+                    v-on:click="onShowClick">
+                    Send
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            <div v-if="isError" class="row">
+                <div class="chip red lighten-3">
+                    Error
+                </div>
+                <div class="error-box">
+                    <pre>{{ errorMessage }}</pre>
+                </div>
+            </div>
+            <div v-for="content in contents" class="row">
+                <div class="col s12">
+                <div class="chip">
+                    {{ content.name }}
+                </div>
+                </div>
+                <div class="col s12" v-if="!content.multistep" v-html="content.html">
+                </div>
+                <div v-if="content.multistep">
+                    <div v-for="(step, idx) in content.steps" class="col s12">
+                        <div class="card-panel white">
+                            <b>Step {{ idx }}:</b><br>
+                            <code>{{ step.expr }}</code><br>
+
+                            <div v-html="step.graph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="src/materialize.min.js"></script>
+        <script src="src/vue@2.7.1.js"></script>
+        <script src="src/calculator.js"></script>
+    </body>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems, {});
+});
+    </script>
+</html>

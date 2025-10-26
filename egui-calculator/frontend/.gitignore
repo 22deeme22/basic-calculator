@@ -1,0 +1,6 @@
+# =================================
+# FRONTEND (Rust)
+# =================================
+target/           # dossiers build Rust
+Cargo.lock                 # lock file Rust
+

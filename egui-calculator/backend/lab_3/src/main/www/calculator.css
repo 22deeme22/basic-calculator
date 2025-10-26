@@ -1,0 +1,29 @@
+.editor-box {
+  min-height: 200px;
+}
+
+.calc-title {
+  font-size: 3em;
+  font-variant: small-caps;
+}
+
+.expr-type-box {
+  margin-right: 1em;
+  color: black;
+  font-weight: 500;
+}
+
+.expr-input-box {
+  font-family: 'Roboto Mono', Menlo, monospace;
+  margin-bottom: 0em;
+}
+
+.expr-input {
+  font-family: 'Roboto Mono', Menlo, monospace;
+}
+
+.error-box {
+  color: red;
+  font-weight: 500;
+  font-family: 'Roboto Mono', monospace;
+}
